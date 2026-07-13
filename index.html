@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>26古诗文大赛工具</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="篇目目录">
+        <header class="brand">
+          <div class="brand-mark">26</div>
+          <div>
+            <h1>古诗文大赛工具</h1>
+            <p>本地 Markdown 内容库</p>
+          </div>
+        </header>
+
+        <label class="search-box">
+          <span>搜索篇名</span>
+          <input id="searchInput" type="search" placeholder="输入篇名、作者或关键词">
+        </label>
+
+        <nav class="category-list" id="categoryList" aria-label="分类"></nav>
+        <div class="work-list" id="workList" aria-label="篇目列表"></div>
+      </aside>
+
+      <main class="main-panel">
+        <section class="reader-head">
+          <div>
+            <p class="eyebrow" id="workCategory"></p>
+            <h2 id="workTitle"></h2>
+            <p class="meta" id="workMeta"></p>
+          </div>
+          <div class="reader-actions" aria-label="阅读工具">
+            <button type="button" id="toggleAnnotationBtn">隐藏注释</button>
+            <button type="button" id="toggleAnswerBtn">隐藏答案</button>
+            <button type="button" id="printBtn">打印</button>
+          </div>
+        </section>
+
+        <section class="tab-strip" id="tabStrip" aria-label="内容区切换"></section>
+
+        <section class="content-grid">
+          <article class="reading-card">
+            <div class="section-title" id="activeSectionTitle"></div>
+            <div class="markdown-body" id="sectionBody"></div>
+          </article>
+
+          <aside class="practice-card">
+            <div class="practice-head">
+              <div>
+                <p class="eyebrow">练习</p>
+                <h3>题库</h3>
+              </div>
+              <span id="questionCount"></span>
+            </div>
+            <div id="quizList" class="quiz-list"></div>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
