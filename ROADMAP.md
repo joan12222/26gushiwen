@@ -1,7 +1,7 @@
 # ROADMAP.md — 26古诗文大赛工具
 
 ## 当前阶段
-- 阶段：基础内容录入与本地网页工具搭建。
+- 阶段：文言文与高中古诗词阅读鉴赏内容已完成一轮入库。
 - 当前工具形态：无构建工具的本地网页，直接打开 `index.html` 使用。
 - 数据维护方式：每篇一份 Markdown，同时在 `app.js` 的 `works` 数组中维护网页索引。
 
@@ -79,22 +79,70 @@
    - `content/compare-06-mudan-fugui.md`：对比阅读第六组：牡丹与富贵
    - `content/compare-07-zengxu-daoyi.md`：对比阅读第七组：赠序与道义
 
-6. 已修正：
+6. 已录入高中古诗词阅读鉴赏训练基础篇 23 首：
+   - `content/poem-basic-01-ge-lv.md`：葛屦
+   - `content/poem-basic-02-yu-mei-ren-da-guang-zu-xi-zui-zhong-fu-changduanju.md`：虞美人·大光祖席醉中赋长短句
+   - `content/poem-basic-03-za-shi-qi-shou-qi-si.md`：杂诗七首（其四）
+   - `content/poem-basic-04-mu-ling-guan-bei-feng-ren-gui-yu-yang.md`：穆陵关北逢人归渔阳
+   - `content/poem-basic-05-bai-yun-ge-song-liu-shiliu-gui-shan.md`：白云歌送刘十六归山
+   - `content/poem-basic-06-zhonglv-putianle-xihu-jishi.md`：【中吕】普天乐·西湖即事
+   - `content/poem-basic-07-qian-bei-huai-san-shou-qi-er.md`：遣悲怀三首（其二）
+   - `content/poem-basic-08-meihua-jiu-shou-qi-yi.md`：梅花九首（其一）
+   - `content/poem-basic-09-sui-gong.md`：隋宫
+   - `content/poem-basic-10-shengshi-xiangling-guse.md`：省试湘灵鼓瑟
+   - `content/poem-basic-11-jiang-zhongzi.md`：将仲子
+   - `content/poem-basic-12-wan-ci-lexiang-xian.md`：晚次乐乡县
+   - `content/poem-basic-13-linjiangxian-shu-yunnan-jiangling-bie-nei.md`：临江仙·戍云南江陵别内
+   - `content/poem-basic-14-guo-baian-ting.md`：过白岸亭
+   - `content/poem-basic-15-pusaman-shu-jian-maowu-xian-lin-shui.md`：菩萨蛮·数间茅屋闲临水
+   - `content/poem-basic-16-xi-sai-shan-huai-gu.md`：西塞山怀古
+   - `content/poem-basic-17-chi-bi.md`：赤壁
+   - `content/poem-basic-18-jinling-yi-qi-yi.md`：金陵驿（其一）
+   - `content/poem-basic-19-zhe-gu.md`：鹧鸪
+   - `content/poem-basic-20-shen-yuan-er-shou.md`：沈园二首
+   - `content/poem-basic-21-yuediao-liuyingqu-fan-li.md`：【越调】柳营曲·范蠡
+   - `content/poem-basic-22-jinling-huai-gu.md`：金陵怀古
+   - `content/poem-basic-23-zhegutian-shiren-jiangri-yi-ci-feng-ji.md`：鹧鸪天·室人降日以此奉寄
+
+7. 已录入高中古诗词阅读鉴赏训练提高篇 17 首：
+   - `content/poem-improve-01-guo-ming-taizu-gugong.md`：过明太祖故宫
+   - `content/poem-improve-02-you-ju.md`：幽居
+   - `content/poem-improve-03-xipingyue-zhiliu-suqing.md`：西平乐·稚柳苏晴
+   - `content/poem-improve-04-shuidiaogetou-shuangjiang-bitianjing.md`：水调歌头·霜降碧天静
+   - `content/poem-improve-05-gushi-shijiushou-quche-shang-dongmen.md`：古诗十九首·驱车上东门
+   - `content/poem-improve-06-jintong-xianren-ci-han-ge.md`：金铜仙人辞汉歌
+   - `content/poem-improve-07-ganyu-shi-sanshibashou-qi-shijiu.md`：感遇诗三十八首（其十九）
+   - `content/poem-improve-08-ji-zhong-san.md`：秾中散
+   - `content/poem-improve-09-qiuxing-bashou-qi-ba.md`：秋兴八首（其八）
+   - `content/poem-improve-10-tasuoxing-chenzhou-lvshe.md`：踏莎行·郴州旅舍
+   - `content/poem-improve-11-lanlingwang-liu.md`：兰陵王·柳
+   - `content/poem-improve-12-ru-ruoye-xi.md`：入若耶溪
+   - `content/poem-improve-13-shuidiaogetou-nini-ernv-yu.md`：水调歌头·昵昵儿女语
+   - `content/poem-improve-14-baixingyueman-yese-cuigen.md`：拜星月慢·夜色催更
+   - `content/poem-improve-15-wu-ren-mu.md`：五人墓
+   - `content/poem-improve-16-xi-wei-liu-jue-ju.md`：戏为六绝句
+   - `content/poem-improve-17-xie-lu-xing.md`：薤露行
+
+8. 已录入高中古诗词对比阅读 6 组：
+   - `content/poem-compare-01-song-yuaner-bie-dongda.md`：第一组：送元二使安西 / 别董大
+   - `content/poem-compare-02-congjunxing-guanshanyue.md`：第二组：从军行 / 关山月
+   - `content/poem-compare-03-song-weiwan-fude-muyu.md`：第三组：送魏万之京 / 赋得暮雨送李胄
+   - `content/poem-compare-04-yu-yishui-songren.md`：第四组：于易水送人 / 李端公 / 钱别王十一南游
+   - `content/poem-compare-05-ganyu-lan.md`：第五组：感遇（其一） / 兰
+   - `content/poem-compare-06-yong-liu.md`：第六组：咏柳 / 咏柳
+
+9. 已修正：
    - 《赞刘谐》中“见而晒曰”已更正为“见而哂曰”。
    - 已取消“加点字视觉还原”功能；后续题库只保留原题文字，不做点号样式。
    - 文言文提高篇文件名统一为 `content/improve-NN-slug.md`，并已同步修正 `app.js` 中提高篇顺序为 01-21。
 
 ## 进行中
-- 按用户截图继续录入每篇内容。
-- 每篇都需要同步两处：
-  - 新增 `content/NN-slug.md`
-  - 追加到 `app.js` 的 `works` 数组
+- 当前无进行中的录入任务。
 
 ## 待办
-1. 继续录入后续篇目截图。
-2. 后续可考虑把 `app.js` 中的内容索引拆成独立数据文件，减少单文件过长。
-3. 后续可考虑从 Markdown 自动生成网页索引，避免重复维护。
-4. 后续可补 README，说明如何打开和继续录入。
+1. 后续可考虑把 `app.js` 中的内容索引拆成独立数据文件，减少单文件过长。
+2. 后续可考虑从 Markdown 自动生成网页索引，避免重复维护。
+3. 后续可补 README，说明如何打开和继续录入。
 
 ## 录入规则
 - 每篇 Markdown 结构固定：
@@ -129,12 +177,14 @@
   - `## 原文`、`## 对照翻译`、`## 全文赏析` 按甲、乙、丙分别分段。
   - `## 注释`、`## 文化常识`、`## 题库` 按组维护。
   - `content/compare-NN-slug.md` 用于文言文对比阅读文件命名。
+  - `content/poem-compare-NN-slug.md` 用于古诗词对比阅读文件命名。
 
 ## 最近验证
 - 已对 `app.js` 执行语法检查：通过。
 - 最近一次验证日期：2026-07-13。
-- 当前内容文件数量：52 个 Markdown 文件。
+- 当前内容文件数量：98 个 Markdown 文件。
 - 当前已完成文言文基础篇 24 篇、提高篇 21 篇、对比阅读 7 组。
+- 当前已完成高中古诗词基础篇 23 首、提高篇 17 首、对比阅读 6 组。
 - 已验证文言文提高篇在 `app.js` 中按 `improve-01` 到 `improve-21` 排序。
 - 当前可直接打开：`index.html`。
 
@@ -142,5 +192,5 @@
 - 无。
 
 ## 下一步
-- 继续录入后续高中古诗词阅读鉴赏训练内容。
-- 每录入一篇或一组后运行 `node --check app.js` 验证语法。
+- 准备提交当前内容入库成果。
+- 后续如继续扩充内容，每录入一篇或一组后运行 `node --check app.js` 验证语法。
