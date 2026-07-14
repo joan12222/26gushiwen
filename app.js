@@ -2405,15 +2405,15 @@ const works = [
     keywords: ["君子为国", "苏轼", "新论", "孔子", "子路", "冉有", "治国", "自修"],
     annotations: [
       { term: "饰贾", note: "虚标价格" },
-      { term: "孔子之门", note: "孔子门下有德行、言语、政事、文学四科" },
-      { term: "糜", note: "毁坏" },
+      { term: "孔子之门", note: "孔子门下有德行、言语、政事、文学四科。“孔门四科”中，冉求和仲由是政事科的代表人物" },
+      { term: "隳", note: "毁坏" },
       { term: "师旅", note: "军队" },
       { term: "饥馑", note: "饥荒" },
       { term: "逸民", note: "隐逸的人才" }
     ],
     sections: {
       "原文": [
-        "盖君子为国，正其纲纪，治其法度，皆可得而知也。惟其所以施之，则不可得而知。孔子之治鲁也，糜其三都，诛其乱政，可得而知也；其所以使羔豚不饰贾，男女别于道者，不可得而知也。孔子之所汲汲以教人者，在其不可得而知，而其可得而知者不详论也。曰是有意于治者能之，然而亦不可去也。故其得为是国也，必举之以为先。",
+        "盖君子为国，正其纲纪，治其法度，皆可得而知也。惟其所以施之，则不可得而知。孔子之治鲁也，隳其三都，诛其乱政，可得而知也；其所以使羔豚不饰贾，男女别于道者，不可得而知也。孔子之所汲汲以教人者，在其不可得而知，而其可得而知者不详论也。曰是有意于治者能之，然而亦不可去也。故其得为是国也，必举之以为先。",
         "由是观之，治国之地，圣人无之不得以施其圣，然而圣人之道，有所高远而不可及者矣。其于孔子之门所谓政事，而冉有、子路之所能者，治国之地也。子路曰：“千乘之国，摄乎大国之间，加之以师旅，因之以饥馑，由也为之，可使有勇，且知方也。”冉有曰：“方六七十，如五六十，求也为之，可使足民。如其礼乐，以俟君子。”是亦自以为能为其地，而未有以施之云尔。然夫子许其能之，而不以为大贤，则夫子之道深矣远矣。",
         "夫子平居朝夕孜孜以教人者，惟所以自修其身；而其所以修其政事者，未尝言也。盖亦尝言之矣，曰谨权量，审法度，修废官，兴灭国，继绝世，举逸民，所重民食丧祭。是九者凡所以为政而未足也。故继之曰宽则得众信则人任焉敏则有功公则说。是四者所以成之焉耳，其意以为既成而后以其平居自修之身施之。"
       ],
@@ -2443,7 +2443,7 @@ const works = [
       },
       {
         type: "词义解释",
-        prompt: "写出下列加点词在句中的意思：①糜其三都 ②如五六十 ③然夫子许其能之 ④举逸民",
+        prompt: "写出下列加点词在句中的意思：①隳其三都 ②如五六十 ③然夫子许其能之 ④举逸民",
         answer: "①毁坏。②或者。③选许。④推荐。"
       },
       {
@@ -7828,9 +7828,23 @@ function renderAnnotatedParagraph(paragraph, annotations) {
   return `<p class="original-paragraph">${html}</p>`;
 }
 
+function renderParallelTranslation(work) {
+  const originals = work.sections["原文"] || [];
+  const translations = work.sections["对照翻译"] || [];
+  const pairCount = Math.max(originals.length, translations.length);
+
+  return Array.from({ length: pairCount }, (_, index) => `
+    <div class="translation-pair">
+      ${originals[index] ? `<p class="translation-original">${escapeHtml(originals[index])}</p>` : ""}
+      ${translations[index] ? `<p class="translation-text">${escapeHtml(translations[index])}</p>` : ""}
+    </div>
+  `).join("");
+}
+
 function renderSection(work) {
   activeSectionTitle.textContent = state.tab;
   sectionBody.classList.toggle("original-body", state.tab === "原文");
+  sectionBody.classList.toggle("translation-pair-body", state.tab === "对照翻译");
   toggleAnnotationBtn.hidden = state.tab !== "原文";
   toggleAnnotationBtn.textContent = state.annotationsVisible ? "隐藏注释" : "显示注释";
 
@@ -7838,6 +7852,11 @@ function renderSection(work) {
     sectionBody.innerHTML = work.sections[state.tab]
       .map((paragraph) => renderAnnotatedParagraph(paragraph, work.annotations))
       .join("");
+    return;
+  }
+
+  if (state.tab === "对照翻译") {
+    sectionBody.innerHTML = renderParallelTranslation(work);
     return;
   }
 

@@ -286,6 +286,39 @@ input {
   text-indent: 2em;
 }
 
+.translation-pair-body {
+  display: grid;
+  gap: 18px;
+  font-size: 18px;
+  line-height: 1.95;
+}
+
+.translation-pair {
+  padding: 0 0 18px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.translation-pair:last-child {
+  border-bottom: 0;
+}
+
+.translation-original {
+  margin: 0 0 6px;
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 2.1;
+  text-indent: 2em;
+}
+
+.translation-text {
+  margin: 0;
+  color: var(--blue);
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+  text-indent: 2em;
+}
+
 .annotated-term {
   position: relative;
   display: inline-flex;
