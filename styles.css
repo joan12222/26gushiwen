@@ -293,6 +293,22 @@ input {
   line-height: 1.95;
 }
 
+.translation-group h3 {
+  margin: 0 0 4px;
+  color: var(--ink);
+  font-size: 21px;
+}
+
+.translation-author {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.translation-group + .translation-group {
+  margin-top: 8px;
+}
+
 .translation-pair {
   padding: 0 0 18px;
   border-bottom: 1px dashed var(--line);
